@@ -1,4 +1,4 @@
-*undo.txt*      Nvim
+*undo.txt*      dundargoc
 
 
 		  VIM REFERENCE MANUAL    by Bram Moolenaar

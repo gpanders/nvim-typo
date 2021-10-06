@@ -1,13 +1,13 @@
-*job_control.txt*    Nvim
+*job_control.txt*    dundargoc
 
 
 		 NVIM REFERENCE MANUAL    by Thiago de Arruda
 
 
-Nvim job control					*job* *job-control*
+dundargoc job control					*job* *job-control*
 
-Job control is a way to perform multitasking in Nvim, so scripts can spawn and
-control multiple processes without blocking the current Nvim instance.
+Job control is a way to perform multitasking in dundargoc, so scripts can spawn and
+control multiple processes without blocking the current dundargoc instance.
 
 				      Type |gO| to see the table of contents.
 
@@ -17,7 +17,7 @@ Concepts
 Job Id							*job-id*
 
 Each job is identified by an integer id, unique for the life of the current
-Nvim session. Each job-id is a valid |channel-id|: they share the same "key
+dundargoc session. Each job-id is a valid |channel-id|: they share the same "key
 space". Functions like |jobstart()| return job ids; functions like
 |jobstop()|, |chansend()|, |rpcnotify()|, and |rpcrequest()| take job ids.
 

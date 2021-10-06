@@ -1,12 +1,12 @@
-*vim_diff.txt*    Nvim
+*vim_diff.txt*    dundargoc
 
 
 			    NVIM REFERENCE MANUAL
 
 
-Differences between Nvim and Vim			       *vim-differences*
+Differences between dundargoc and Vim			       *vim-differences*
 
-Nvim differs from Vim in many ways, although editor and Vimscript (not
+dundargoc differs from Vim in many ways, although editor and Vimscript (not
 Vim9script) features are mostly identical.  This document is a complete and
 centralized reference of the differences.
 
@@ -78,7 +78,7 @@ centralized reference of the differences.
 
 Default Mappings ~
 							*default-mappings*
-Nvim creates the following default mappings at |startup|. You can disable any
+dundargoc creates the following default mappings at |startup|. You can disable any
 of these in your config by simply removing the mapping, e.g. ":unmap Y".
 >
 	nnoremap Y y$
@@ -120,21 +120,21 @@ XDG base directories		|xdg|
 
 USER EXPERIENCE  ~
 
-Working intuitively and consistently is a major goal of Nvim.
+Working intuitively and consistently is a major goal of dundargoc.
 
 							*feature-compile*
-- Nvim always includes ALL features, in contrast to Vim (which ships with
+- dundargoc always includes ALL features, in contrast to Vim (which ships with
   various combinations of 100+ optional features). Think of it as a leaner
   version of Vim's "HUGE" build. This reduces surface area for bugs, and
   removes a common source of confusion and friction for users.
 
-- Nvim avoids features that cannot be provided on all platforms; instead that
+- dundargoc avoids features that cannot be provided on all platforms; instead that
   is delegated to external plugins/extensions. E.g. the `-X` platform-specific
   option is "sometimes" available in Vim (with potential surprises:
   http://stackoverflow.com/q/14635295).
 
 - Vim's internal test functions (test_autochdir(), test_settime(), etc.) are
-  not exposed (nor implemented); instead Nvim has a robust API.
+  not exposed (nor implemented); instead dundargoc has a robust API.
 
 - Behaviors, options, documentation are removed if they cost users more time
   than they save.
@@ -156,9 +156,9 @@ stability and allows those plugins to work without blocking the editor. Even
 "legacy" Python and Ruby plugins which use the old Vim interfaces (|if_pyth|,
 |if_ruby|) run out-of-process.
 
-Platform and I/O facilities are built upon libuv. Nvim benefits from libuv
+Platform and I/O facilities are built upon libuv. dundargoc benefits from libuv
 features and bug fixes, and other projects benefit from improvements to libuv
-by Nvim developers.
+by dundargoc developers.
 
 FEATURES ~
 
@@ -167,9 +167,9 @@ Command-line highlighting:
   using a built-in Vimscript expression parser. |expr-highlight|
 					*E5408* *E5409*
   |input()|, |inputdialog()| support custom highlighting. |input()-highlight|
-					*g:Nvim_color_cmdline*
+					*g:dundargoc_color_cmdline*
   (Experimental) Command-line (|:|) is colored by callback defined in
-  `g:Nvim_color_cmdline` (this callback is for testing only, and will be
+  `g:dundargoc_color_cmdline` (this callback is for testing only, and will be
   removed in the future).
 
 Commands:
@@ -199,7 +199,7 @@ Functions:
 
 Highlight groups:
   |highlight-blend| controls blend level for a highlight group
-  |expr-highlight| highlight groups (prefixed with "Nvim")
+  |expr-highlight| highlight groups (prefixed with "dundargoc")
   |hl-NormalFloat| highlights floating window
   |hl-NormalNC| highlights non-current windows
   |hl-MsgArea| highlights messages/cmdline area
@@ -245,7 +245,7 @@ Variables:
 ==============================================================================
 4. Changed features					 *nvim-features-changed*
 
-Nvim always builds with all features, in contrast to Vim which may have
+dundargoc always builds with all features, in contrast to Vim which may have
 certain features removed/added at compile-time. |feature-compile|
 
 If a Python interpreter is available on your `$PATH`, |:python| and |:python3|
@@ -281,7 +281,7 @@ are always available and may be used simultaneously. See |provider-python|.
 4. Stringifyed infinite and NaN values now use |str2float()| and can be evaled
    back.
 5. (internal) Trying to print or stringify VAR_UNKNOWN in Vim results in 
-   nothing, E908, in Nvim it is internal error.
+   nothing, E908, in dundargoc it is internal error.
 
 |json_decode()| behaviour changed:
 1. It may output |msgpack-special-dict|.
@@ -323,7 +323,7 @@ Lua interface (|lua.txt|):
   `:lua print("a\nb")` .
 - `:lua error('TEST')` emits the error “E5105: Error while calling lua chunk:
   [string "<VimL compiled string>"]:1: TEST”, whereas Vim emits only “TEST”.
-- Lua has direct access to Nvim |API| via `vim.api`.
+- Lua has direct access to dundargoc |API| via `vim.api`.
 - Lua package.path and package.cpath are automatically updated according to
   'runtimepath': |lua-require|.
 
@@ -365,7 +365,7 @@ Shell:
   cannot "mess up" the screen. (You can still use "chansend(v:stderr,…)" if
   you want to mess up the screen :)
 
-  Nvim throttles (skips) messages from shell commands (|:!|, |:grep|, |:make|)
+  dundargoc throttles (skips) messages from shell commands (|:!|, |:grep|, |:make|)
   if there is too much output. No data is lost, this only affects display and
   improves performance. |:terminal| output is never throttled.
 
@@ -388,7 +388,7 @@ Startup:
     - works in more cases: |-Es|, file args
 
 Syntax highlighting:
-  syncolor.vim has been removed. Nvim now sets up default highlighting groups
+  syncolor.vim has been removed. dundargoc now sets up default highlighting groups
   automatically for both light and dark backgrounds, regardless of whether or
   not syntax highlighting is enabled. This means that |:syntax-on| and
   |:syntax-enable| are now identical. Users who previously used an
@@ -397,7 +397,7 @@ Syntax highlighting:
 
 TUI:
 			*:set-termcap*
-  Start Nvim with 'verbose' level 3 to show terminal capabilities: >
+  Start dundargoc with 'verbose' level 3 to show terminal capabilities: >
 	nvim -V3
 <
 			*'term'* *E529* *E530* *E531*
@@ -407,11 +407,11 @@ TUI:
 <  "builtin_x" means one of the |builtin-terms| was chosen, because the expected
   terminfo file was not found on the system.
 
-  Nvim will use 256-colour capability on Linux virtual terminals.  Vim uses
+  dundargoc will use 256-colour capability on Linux virtual terminals.  Vim uses
   only 8 colours plus bright foreground on Linux VTs.
 
   Vim combines what is in its |builtin-terms| with what it reads from terminfo,
-  and has a 'ttybuiltin' setting to control how that combination works.  Nvim
+  and has a 'ttybuiltin' setting to control how that combination works.  dundargoc
   uses one or the other, it does not attempt to merge the two.
 
 UI/Display:
@@ -428,7 +428,7 @@ Vimscript compatibility:
 
 Some legacy Vim features are not implemented:
 
-- |if_lua|: Nvim Lua API is not compatible with Vim's "if_lua"
+- |if_lua|: dundargoc Lua API is not compatible with Vim's "if_lua"
 - *if_mzscheme*
 - |if_py|: *python-bindeval* *python-Function* are not supported
 - *if_tcl*
@@ -436,7 +436,7 @@ Some legacy Vim features are not implemented:
 ==============================================================================
 6. Removed features					 *nvim-features-removed*
 
-These Vim features were intentionally removed from Nvim.
+These Vim features were intentionally removed from dundargoc.
 
 Aliases:
   ex        (alias for "nvim -e")
@@ -481,7 +481,7 @@ Events:
   *SigUSR1* Use |Signal| to detect `SIGUSR1` signal instead.
 
 Highlight groups:
-  *hl-StatusLineTerm* *hl-StatusLineTermNC* are unnecessary because Nvim
+  *hl-StatusLineTerm* *hl-StatusLineTermNC* are unnecessary because dundargoc
     supports 'winhighlight' window-local highlights.
     For example, to mimic Vim's StatusLineTerm:  >
       hi StatusLineTerm ctermfg=black ctermbg=green
@@ -495,7 +495,7 @@ Options:
   'antialias'
   'bioskey' (MS-DOS)
   'conskey' (MS-DOS)
-  *'cp'* *'nocompatible'* *'nocp'* *'compatible'* (Nvim is always "nocompatible".)
+  *'cp'* *'nocompatible'* *'nocp'* *'compatible'* (dundargoc is always "nocompatible".)
   'cpoptions' (gjkHw<*- and all POSIX flags were removed)
   *'cryptmethod'* *'cm'* *'key'* (Vim encryption implementation)
   *'ed'* *'edcompatible'* *'noed'* *'noedcompatible'*
@@ -503,14 +503,14 @@ Options:
   'esckeys'
   'guioptions' "t" flag was removed
   *'guifontset'* *'gfs'* (Use 'guifont' instead.)
-  *'guipty'* (Nvim uses pipes and PTYs consistently on all platforms.)
+  *'guipty'* (dundargoc uses pipes and PTYs consistently on all platforms.)
   'highlight' (Names of builtin |highlight-groups| cannot be changed.)
   *'imactivatefunc'* *'imaf'*
   *'imactivatekey'* *'imak'*
   *'imstatusfunc'* *'imsf'*
   *'macatsui'*
-  'maxmem' Nvim delegates memory-management to the OS.
-  'maxmemtot' Nvim delegates memory-management to the OS.
+  'maxmem' dundargoc delegates memory-management to the OS.
+  'maxmemtot' dundargoc delegates memory-management to the OS.
   'maxcombine' (6 is always used)
   *'prompt'* *'noprompt'*
   *'restorescreen'* *'rs'* *'norestorescreen'* *'nors'*
@@ -561,19 +561,19 @@ Test functions:
 
 TUI:
 			  *t_xx* *termcap-options* *t_AB* *t_Sb* *t_vb* *t_SI*
-  Nvim does not have special `t_XX` options nor <t_XX> keycodes to configure
-  terminal capabilities. Instead Nvim treats the terminal as any other UI,
+  dundargoc does not have special `t_XX` options nor <t_XX> keycodes to configure
+  terminal capabilities. Instead dundargoc treats the terminal as any other UI,
   e.g. 'guicursor' sets the terminal cursor style if possible.
 
 			  *termcap*
-  Nvim never uses the termcap database, only |terminfo| and |builtin-terms|.
+  dundargoc never uses the termcap database, only |terminfo| and |builtin-terms|.
 
 			  *xterm-8bit* *xterm-8-bit*
   Xterm can be run in a mode where it uses true 8-bit CSI.  Supporting this
   requires autodetection of whether the terminal is in UTF-8 mode or non-UTF-8
   mode, as the 8-bit CSI character has to be written differently in each case.
   Vim issues a "request version" sequence to the terminal at startup and looks
-  at how the terminal is sending CSI.  Nvim does not issue such a sequence and
+  at how the terminal is sending CSI.  dundargoc does not issue such a sequence and
   always uses 7-bit control sequences.
 
 ==============================================================================

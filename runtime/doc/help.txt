@@ -1,4 +1,4 @@
-*help.txt*	Nvim
+*help.txt*	dundargoc
 
 			VIM - main help file
 									 k
@@ -99,7 +99,7 @@ General subjects ~
 |help-tags|	all the tags you can jump to (index of tags)
 |tips.txt|	various tips on using Vim
 |message.txt|	(error) messages and explanations
-|develop.txt|	development of Nvim
+|develop.txt|	development of dundargoc
 |debug.txt|	debugging Vim itself
 |uganda.txt|	Vim distribution conditions and what to do with your money
 
@@ -130,7 +130,7 @@ Advanced editing ~
 |eval.txt|	expression evaluation, conditional commands
 |fold.txt|	hide (fold) ranges of lines
 |lua.txt|	Lua API
-|api.txt|	Nvim API via RPC, Lua and VimL
+|api.txt|	dundargoc API via RPC, Lua and VimL
 
 Special issues ~
 |testing.txt|	testing Vim and Vim scripts
@@ -169,7 +169,7 @@ Interfaces ~
 |sign.txt|	debugging signs
 
 Versions ~
-|vim_diff.txt|	Main differences between Nvim and Vim
+|vim_diff.txt|	Main differences between dundargoc and Vim
 |vi_diff.txt|	Main differences between Vim and Vi
 						*standard-plugin-list*
 Standard plugins ~

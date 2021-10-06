@@ -1,4 +1,4 @@
-*if_cscop.txt*  Nvim
+*if_cscop.txt*  dundargoc
 
 
 		  VIM REFERENCE MANUAL    by Andy Kahn
@@ -244,7 +244,7 @@ will display the last 3 components of the file's path, including the file
 name itself.
 
 ==============================================================================
-Using cscope in Nvim			*cscope-usage* *cscope-howtouse*
+Using cscope in dundargoc			*cscope-usage* *cscope-howtouse*
 
 To get started, build the cscope database in your project root directory: >
 	cscope -bcqR
@@ -253,10 +253,10 @@ See the cscope manpage for details: >
 	:Man cscope
 
 By default the cscope database file is named "cscope.out". After building the
-database, connect to it from Nvim: >
+database, connect to it from dundargoc: >
 	:cscope add cscope.out
 
-That establishes a cscope connection for Nvim to use.  You can check the
+That establishes a cscope connection for dundargoc to use.  You can check the
 result with ":cs show".  It will show something like:
 
  # pid	  database name			      prepend path

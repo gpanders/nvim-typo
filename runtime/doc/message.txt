@@ -1,4 +1,4 @@
-*message.txt*   Nvim
+*message.txt*   dundargoc
 
 
 		  VIM REFERENCE MANUAL    by Bram Moolenaar
@@ -325,7 +325,7 @@ generate this message.  This could be caused by a |-m| commandline argument.
 You can switch the 'write' option on with ":set write".
 
 							*E25*  >
-  Nvim does not have a built-in GUI
+  dundargoc does not have a built-in GUI
 
 Neovim does not have a built in GUI, so `:gvim` and `:gui` don't work.
 

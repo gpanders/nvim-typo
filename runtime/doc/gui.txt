@@ -1,10 +1,10 @@
-*gui.txt*       Nvim
+*gui.txt*       dundargoc
 
 
 		  VIM REFERENCE MANUAL    by Bram Moolenaar
 
 
-Nvim Graphical User Interface				*gui* *GUI*
+dundargoc Graphical User Interface				*gui* *GUI*
 
                                       Type |gO| to see the table of contents.
 
@@ -12,7 +12,7 @@ Nvim Graphical User Interface				*gui* *GUI*
 Starting the GUI				*gui-start* *E229* *E233*
 
 				*ginit.vim* *gui-init* *gvimrc* *$MYGVIMRC*
-For GUI-specific configuration Nvim provides the |UIEnter| event.  This
+For GUI-specific configuration dundargoc provides the |UIEnter| event.  This
 happens after other |initialization|s, like reading your vimrc file.
 
 Example: this sets "g:gui" to the value of the UI's "rgb" field:    >

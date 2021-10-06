@@ -1,4 +1,4 @@
-*russian.txt*   Nvim
+*russian.txt*   dundargoc
 
 
 		  VIM REFERENCE MANUAL    by Vassily Ragosin

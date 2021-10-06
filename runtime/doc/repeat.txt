@@ -1,4 +1,4 @@
-*repeat.txt*    Nvim
+*repeat.txt*    dundargoc
 
 
 		  VIM REFERENCE MANUAL    by Bram Moolenaar

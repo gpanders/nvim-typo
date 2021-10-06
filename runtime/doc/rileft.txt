@@ -1,4 +1,4 @@
-*rileft.txt*    Nvim
+*rileft.txt*    dundargoc
 
 
 		  VIM REFERENCE MANUAL    by Avner Lottem

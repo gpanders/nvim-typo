@@ -1,4 +1,4 @@
-*autocmd.txt*   Nvim
+*autocmd.txt*   dundargoc
 
 
 		  VIM REFERENCE MANUAL    by Bram Moolenaar
@@ -46,7 +46,7 @@ effects.  Be careful not to destroy your text.
 			{pat} |autocmd-pattern|.
 			Note: A quote character is seen as argument to the
 			:autocmd and won't start a comment.
-			Nvim always adds {cmd} after existing autocommands so
+			dundargoc always adds {cmd} after existing autocommands so
 			they execute in the order in which they were defined.
 			See |autocmd-nested| for [++nested].
 							*autocmd-once*
@@ -208,7 +208,7 @@ You can use the 'eventignore' option to ignore a number of events or all
 events.
 
 							*events* *{event}*
-Nvim recognizes the following events.  Names are case-insensitive.
+dundargoc recognizes the following events.  Names are case-insensitive.
 
 							*BufAdd*
 BufAdd				Just after creating a new buffer which is
@@ -643,9 +643,9 @@ FilterWritePre			Before writing a file for a filter command or
 				filter command.
 				Not triggered when 'shelltemp' is off.
 							*FocusGained*
-FocusGained			Nvim got focus.
+FocusGained			dundargoc got focus.
 							*FocusLost*
-FocusLost			Nvim lost focus.  Also (potentially) when
+FocusLost			dundargoc lost focus.  Also (potentially) when
 				a GUI dialog pops up.
 							*FuncUndefined*
 FuncUndefined			When a user function is used but it isn't
@@ -663,7 +663,7 @@ UIEnter				After a UI connects via |nvim_ui_attach()|,
 				Sets these |v:event| keys:
 				    chan
 							*UILeave*
-UILeave				After a UI disconnects from Nvim.
+UILeave				After a UI disconnects from dundargoc.
 				Sets these |v:event| keys:
 				    chan
 							*InsertChange*
@@ -825,7 +825,7 @@ ShellCmdPost			After executing a shell command with |:!cmd|,
 				For non-blocking shell commands, see
 				|job-control|.
 							*Signal*
-Signal				After Nvim receives a signal. The pattern is
+Signal				After dundargoc receives a signal. The pattern is
 				matched against the signal name. Only
 				"SIGUSR1" is supported.  Example: >
 				    autocmd Signal SIGUSR1 call some#func()
@@ -992,9 +992,9 @@ VimResized			After the Vim window was resized, thus 'lines'
 				and/or 'columns' changed.  Not when starting
 				up though.
 							*VimResume*
-VimResume			After Nvim resumes from |suspend| state.
+VimResume			After dundargoc resumes from |suspend| state.
 							*VimSuspend*
-VimSuspend			Before Nvim enters |suspend| state.
+VimSuspend			Before dundargoc enters |suspend| state.
 							*WinClosed*
 WinClosed			After closing a window. <afile> expands to the
 				|window-ID|.

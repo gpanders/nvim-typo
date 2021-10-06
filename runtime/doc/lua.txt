@@ -1,4 +1,4 @@
-*lua.txt*    Nvim
+*lua.txt*    dundargoc
 
 
                             NVIM REFERENCE MANUAL
@@ -16,7 +16,7 @@ an idea of what lurks beneath: >
 
     :lua print(vim.inspect(package.loaded))
 
-Nvim includes a "standard library" |lua-stdlib| for Lua.  It complements the
+dundargoc includes a "standard library" |lua-stdlib| for Lua.  It complements the
 "editor stdlib" (|functions| and Ex commands) and the |API|, all of which can
 be used from Lua code. A good overview of using Lua in neovim is given by
 https://github.com/nanotee/nvim-lua-guide.
@@ -26,7 +26,7 @@ are on 'runtimepath':
     runtime/lua/foo.lua
     ~/.config/nvim/lua/foo.lua
 then `require('foo')` loads "~/.config/nvim/lua/foo.lua", and
-"runtime/lua/foo.lua" is not used.  See |lua-require| to understand how Nvim
+"runtime/lua/foo.lua" is not used.  See |lua-require| to understand how dundargoc
 finds and loads Lua modules.  The conventions are similar to those of
 Vimscript |plugin|s, with some extra features.  See |lua-require-example| for
 a walkthrough.
@@ -35,7 +35,7 @@ a walkthrough.
 IMPORTING LUA MODULES                                   *lua-require*
 
                                                         *lua-package-path*
-Nvim automatically adjusts `package.path` and `package.cpath` according to
+dundargoc automatically adjusts `package.path` and `package.cpath` according to
 effective 'runtimepath' value.  Adjustment happens whenever 'runtimepath' is
 changed.  `package.path` is adjusted by simply appending `/lua/?.lua` and
 `/lua/?/init.lua` to each directory from 'runtimepath' (`/` is actually the
@@ -87,7 +87,7 @@ Note:
   added and reordering `package.path`/`package.cpath` content if 'runtimepath'
   was reordered.
 
-- Although adjustments happen automatically, Nvim does not track current
+- Although adjustments happen automatically, dundargoc does not track current
   values of `package.path` or `package.cpath`.  If you happen to delete some
   paths from there you can set 'runtimepath' to trigger an update: >
       let &runtimepath = &runtimepath
@@ -243,7 +243,7 @@ has its own scope (closure), so only global variables are shared between
 command calls. The |lua-stdlib| modules, user modules, and anything else on
 |lua-package-path| are available.
 
-The Lua print() function redirects its output to the Nvim message area, with
+The Lua print() function redirects its output to the dundargoc message area, with
 arguments separated by " " (space) instead of "\t" (tab).
 
                                                         *:lua*
@@ -251,7 +251,7 @@ arguments separated by " " (space) instead of "\t" (tab).
                         Executes Lua chunk {chunk}.
 
                         Examples: >
-                            :lua vim.api.nvim_command('echo "Hello, Nvim!"')
+                            :lua vim.api.nvim_command('echo "Hello, dundargoc!"')
 <                        To see the Lua version: >
                             :lua print(_VERSION)
 <                        To see the LuaJIT version: >
@@ -314,7 +314,7 @@ arguments separated by " " (space) instead of "\t" (tab).
 ==============================================================================
 luaeval()                                               *lua-eval* *luaeval()*
 
-The (dual) equivalent of "vim.eval" for passing Lua values to Nvim is
+The (dual) equivalent of "vim.eval" for passing Lua values to dundargoc is
 "luaeval". "luaeval" takes an expression string and an optional argument used 
 for _A inside expression and returns the result of the expression. It is 
 semantically equivalent in Lua to:
@@ -423,7 +423,7 @@ Note: `v:lua` without a call is not allowed in a Vimscript expression:
 ==============================================================================
 Lua standard modules                                    *lua-stdlib*
 
-The Nvim Lua "standard library" (stdlib) is the `vim` module, which exposes
+The dundargoc Lua "standard library" (stdlib) is the `vim` module, which exposes
 various functions and sub-modules.  It is always loaded, thus require("vim")
 is unnecessary.
 
@@ -457,7 +457,7 @@ internal/private and must not be used by plugins.
 ------------------------------------------------------------------------------
 VIM.LOOP                                                *lua-loop* *vim.loop*
 
-`vim.loop` exposes all features of the Nvim event-loop.  This is a low-level
+`vim.loop` exposes all features of the dundargoc event-loop.  This is a low-level
 API that provides functionality for networking, filesystem, and process
 management.  Try this command to see available functions: >
 
@@ -507,7 +507,7 @@ Example: File-change detection                          *watch-file*
     2. Execute it with ":luafile %".
     3. Use ":Watch %" to watch any file.
     4. Try editing the file from another text editor.
-    5. Observe that the file reloads in Nvim (because on_change() calls
+    5. Observe that the file reloads in dundargoc (because on_change() calls
        |:checktime|). >
 
     local w = vim.loop.new_fs_event()
@@ -560,7 +560,7 @@ Example: TCP echo-server                                *tcp-server*
 ------------------------------------------------------------------------------
 VIM.HIGHLIGHT                                           *lua-highlight*
 
-Nvim includes a function for highlighting a selection on yank (see for example
+dundargoc includes a function for highlighting a selection on yank (see for example
 https://github.com/machakann/vim-highlightedyank). To enable it, add
 >
  au TextYankPost * silent! lua vim.highlight.on_yank()
@@ -703,17 +703,17 @@ vim.mpack.unpack({str})                                 *vim.mpack.unpack*
 VIM                                                     *lua-builtin*
 
 vim.api.{func}({...})                                   *vim.api*
-        Invokes Nvim |API| function {func} with arguments {...}.
+        Invokes dundargoc |API| function {func} with arguments {...}.
         Example: call the "nvim_get_current_line()" API function: >
             print(tostring(vim.api.nvim_get_current_line()))
 
 vim.version()                                           *vim.version*
-        Gets the version of the current Nvim build.
+        Gets the version of the current dundargoc build.
 
 vim.in_fast_event()                                     *vim.in_fast_event()*
         Returns true if the code is executing as part of a "fast" event
         handler, where most of the API is disabled. These are low-level events
-        (e.g. |lua-loop-callbacks|) which can be invoked whenever Nvim polls
+        (e.g. |lua-loop-callbacks|) which can be invoked whenever dundargoc polls
         for input.  When this is `false` most API functions are callable (but
         may be subject to other restrictions such as |textlock|).
 
@@ -724,12 +724,12 @@ vim.NIL                                                             *vim.NIL*
         treated as missing: `{"foo", nil}` is the same as `{"foo"}`.
 
 vim.empty_dict()                                            *vim.empty_dict()*
-        Creates a special empty table (marked with a metatable), which Nvim
+        Creates a special empty table (marked with a metatable), which dundargoc
         converts to an empty dictionary when translating Lua values to
-        Vimscript or API types. Nvim by default converts an empty table `{}`
+        Vimscript or API types. dundargoc by default converts an empty table `{}`
         without this metatable to an list/array.
 
-        Note: if numeric keys are present in the table, Nvim ignores the
+        Note: if numeric keys are present in the table, dundargoc ignores the
         metatable marker and converts the dict to a list/array anyway.
 
 vim.rpcnotify({channel}, {method}[, {args}...])             *vim.rpcnotify()*
@@ -791,7 +791,7 @@ vim.wait({time} [, {callback}, {interval}, {fast_only}])          *vim.wait()*
         Wait for {time} in milliseconds until {callback} returns `true`.
 
         Executes {callback} immediately and at approximately {interval}
-        milliseconds (default 200). Nvim still processes other events during
+        milliseconds (default 200). dundargoc still processes other events during
         this time.
 
     Parameters: ~
@@ -876,7 +876,7 @@ vim.types                                               *vim.types*
 ------------------------------------------------------------------------------
 LUA-VIMSCRIPT BRIDGE                                    *lua-vimscript*
 
-Nvim Lua provides an interface to Vimscript variables and functions, and
+dundargoc Lua provides an interface to Vimscript variables and functions, and
 editor commands and options.
 See also https://github.com/nanotee/nvim-lua-guide.
 
@@ -1210,7 +1210,7 @@ on_key({fn}, {ns_id})                                           *vim.on_key()*
                 Adds Lua function {fn} with namespace id {ns_id} as a listener
                 to every, yes every, input key.
 
-                The Nvim command-line option |-w| is related but does not
+                The dundargoc command-line option |-w| is related but does not
                 support callbacks and cannot be toggled dynamically.
 
                 Note:
@@ -1222,7 +1222,7 @@ on_key({fn}, {ns_id})                                           *vim.on_key()*
 
                 Parameters: ~
                     {fn}     function: Callback function. It should take one
-                             string argument. On each key press, Nvim passes
+                             string argument. On each key press, dundargoc passes
                              the key char to fn(). |i_CTRL-V| If {fn} is nil,
                              it removes the callback for the associated
                              {ns_id}
@@ -1285,7 +1285,7 @@ region({bufnr}, {pos1}, {pos2}, {regtype}, {inclusive})         *vim.region()*
                     region lua table of the form {linenr = {startcol,endcol}}
 
 schedule_wrap({cb})                                      *vim.schedule_wrap()*
-                Defers callback `cb` until the Nvim API is safe to call.
+                Defers callback `cb` until the dundargoc API is safe to call.
 
                 See also: ~
                     |lua-loop-callbacks|

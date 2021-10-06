@@ -1,4 +1,4 @@
-*debug.txt*     Nvim
+*debug.txt*     dundargoc
 
 
 		  VIM REFERENCE MANUAL    by Bram Moolenaar

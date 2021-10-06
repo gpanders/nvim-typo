@@ -1,4 +1,4 @@
-*eval.txt*	Nvim
+*eval.txt*	dundargoc
 
 
 		  VIM REFERENCE MANUAL	  by Bram Moolenaar
@@ -2072,11 +2072,11 @@ v:profiling	Normally zero.  Set to one after using ":profile start".
 		See |profiling|.
 
 					*v:progname* *progname-variable*
-v:progname	The name by which Nvim was invoked (with path removed).
+v:progname	The name by which dundargoc was invoked (with path removed).
 		Read-only.
 
 					*v:progpath* *progpath-variable*
-v:progpath	Absolute path to the current running Nvim.
+v:progpath	Absolute path to the current running dundargoc.
 		Read-only.
 
 					*v:register* *register-variable*
@@ -2098,7 +2098,7 @@ v:scrollstart	String describing the script or function that caused the
 		hit-enter prompt.
 
 					*v:servername* *servername-variable*
-v:servername	Primary listen-address of the current Nvim instance, the first
+v:servername	Primary listen-address of the current dundargoc instance, the first
 		item returned by |serverlist()|.  Can be set by |--listen| or
 		|$NVIM_LISTEN_ADDRESS| at startup. |serverstart()| |serverstop()|
 		Read-only.
@@ -2226,7 +2226,7 @@ v:val		Value of the current item of a |List| or |Dictionary|.  Only
 v:version	Vim version number: major version times 100 plus minor
 		version.  Vim 5.0 is 500, Vim 5.1 is 501.
 		Read-only.
-		Use |has()| to check the Nvim (not Vim) version: >
+		Use |has()| to check the dundargoc (not Vim) version: >
 			:if has("nvim-0.2.1")
 <
 
@@ -2241,7 +2241,7 @@ v:warningmsg	Last given warning message.
 					*v:windowid* *windowid-variable*
 v:windowid	Application-specific window "handle" which may be set by any
 		attached UI. Defaults to zero.
-		Note: For Nvim |windows| use |winnr()| or |win_getid()|, see
+		Note: For dundargoc |windows| use |winnr()| or |win_getid()|, see
 		|window-ID|.
 
 ==============================================================================
@@ -3225,7 +3225,7 @@ chanclose({id}[, {stream}])				*chanclose()*
 chansend({id}, {data})					*chansend()*
 		Send data to channel {id}. For a job, it writes it to the
 		stdin of the process. For the stdio channel |channel-stdio|,
-		it writes to Nvim's stdout.  Returns the number of bytes
+		it writes to dundargoc's stdout.  Returns the number of bytes
 		written if the write succeeded, 0 otherwise.
 		See |channel-bytes| for more information.
 
@@ -5554,7 +5554,7 @@ has({feature})	Returns 1 if {feature} is supported, 0 otherwise.  The
 		{feature} argument is a feature name like "nvim-0.2.1" or
 		"win32", see below.  See also |exists()|.
 
-		If the code has a syntax error, then Nvim may skip the rest
+		If the code has a syntax error, then dundargoc may skip the rest
 		of the line and miss |:endif|. >
 	if has('feature') | let x = this->breaks->without->the->feature | endif
 <
@@ -5565,12 +5565,12 @@ has({feature})	Returns 1 if {feature} is supported, 0 otherwise.  The
 	endif
 <
 		Vim's compile-time feature-names (prefixed with "+") are not
-		recognized because Nvim is always compiled with all possible
+		recognized because dundargoc is always compiled with all possible
 		features. |feature-compile|
 
 		Feature names can be:
-		1.  Nvim version. For example the "nvim-0.2.1" feature means
-		    that Nvim is version 0.2.1 or later: >
+		1.  dundargoc version. For example the "nvim-0.2.1" feature means
+		    that dundargoc is version 0.2.1 or later: >
 			:if has("nvim-0.2.1")
 
 <		2.  Runtime condition or other pseudo-feature. For example the
@@ -5586,7 +5586,7 @@ has({feature})	Returns 1 if {feature} is supported, 0 otherwise.  The
 			fname_case	Case in file names matters (for Darwin and MS-Windows
 					this is not present).
 			mac		MacOS system.
-			nvim		This is Nvim.
+			nvim		This is dundargoc.
 			python2		Legacy Vim |python2| interface. |has-python|
 			python3		Legacy Vim |python3| interface. |has-python|
 			pythonx		Legacy Vim |python_x| interface. |has-pythonx|
@@ -5604,7 +5604,7 @@ has({feature})	Returns 1 if {feature} is supported, 0 otherwise.  The
 			:if v:version > 602 || v:version == 602 && has("patch148")
 
 <		4.  Vim version. For example the "patch-7.4.237" feature means
-		    that Nvim is Vim-compatible to version 7.4.237 or later. >
+		    that dundargoc is Vim-compatible to version 7.4.237 or later. >
 			:if has("patch-7.4.237")
 
 
@@ -6103,8 +6103,8 @@ jobstart({cmd}[, {opts}])				*jobstart()*
 		  cwd:	      (string, default=|current-directory|) Working
 			      directory of the job.
 		  detach:     (boolean) Detach the job process: it will not be
-			      killed when Nvim exits. If the process exits
-			      before Nvim, `on_exit` will be invoked.
+			      killed when dundargoc exits. If the process exits
+			      before dundargoc, `on_exit` will be invoked.
 		  env:	      (dict) Map of environment variable name:value
 			      pairs extending (or replacing if |clear_env|)
 			      the current environment.
@@ -8155,7 +8155,7 @@ serverlist()						*serverlist()*
 serverstart([{address}])				*serverstart()*
 		Opens a socket or named pipe at {address} and listens for
 		|RPC| messages. Clients can send |API| commands to the address
-		to control Nvim. Returns the address string.
+		to control dundargoc. Returns the address string.
 
 		If {address} does not contain a colon ":" it is interpreted as
 		a named pipe or Unix domain socket path.
@@ -12578,116 +12578,116 @@ Command-line expressions highlighting		*expr-highlight*
 Expressions entered by the user in |i_CTRL-R_=|, |c_CTRL-\_e|, |quote=| are
 highlighted by the built-in expressions parser.  It uses highlight groups
 described in the table below, which may be overridden by colorschemes.
-							*hl-NvimInvalid*
-Besides the "Nvim"-prefixed highlight groups described below, there are
-"NvimInvalid"-prefixed highlight groups which have the same meaning but
+							*hl-dundargocInvalid*
+Besides the "dundargoc"-prefixed highlight groups described below, there are
+"dundargocInvalid"-prefixed highlight groups which have the same meaning but
 indicate that the token contains an error or that an error occurred just
 before it.  They have mostly the same hierarchy, except that (by default) in
-place of any non-Nvim-prefixed group NvimInvalid linking to `Error` is used
+place of any non-dundargoc-prefixed group dundargocInvalid linking to `Error` is used
 and some other intermediate groups are present.
 
 Group                              Default link            Colored expression ~
-*hl-NvimInternalError*               None, red/red           Parser bug
+*hl-dundargocInternalError*               None, red/red           Parser bug
 
-*hl-NvimAssignment*                  Operator                Generic assignment
-*hl-NvimPlainAssignment*             NvimAssignment          `=` in |:let|
-*hl-NvimAugmentedAssignment*         NvimAssignment          Generic, `+=`/`-=`/`.=`
-*hl-NvimAssignmentWithAddition*      NvimAugmentedAssignment `+=` in |:let+=|
-*hl-NvimAssignmentWithSubtraction*   NvimAugmentedAssignment `-=` in |:let-=|
-*hl-NvimAssignmentWithConcatenation* NvimAugmentedAssignment `.=` in |:let.=|
+*hl-dundargocAssignment*                  Operator                Generic assignment
+*hl-dundargocPlainAssignment*             dundargocAssignment          `=` in |:let|
+*hl-dundargocAugmentedAssignment*         dundargocAssignment          Generic, `+=`/`-=`/`.=`
+*hl-dundargocAssignmentWithAddition*      dundargocAugmentedAssignment `+=` in |:let+=|
+*hl-dundargocAssignmentWithSubtraction*   dundargocAugmentedAssignment `-=` in |:let-=|
+*hl-dundargocAssignmentWithConcatenation* dundargocAugmentedAssignment `.=` in |:let.=|
 
-*hl-NvimOperator*                    Operator                Generic operator
+*hl-dundargocOperator*                    Operator                Generic operator
 
-*hl-NvimUnaryOperator*               NvimOperator            Generic unary op
-*hl-NvimUnaryPlus*                   NvimUnaryOperator       |expr-unary-+|
-*hl-NvimUnaryMinus*                  NvimUnaryOperator       |expr-unary--|
-*hl-NvimNot*                         NvimUnaryOperator       |expr-!|
+*hl-dundargocUnaryOperator*               dundargocOperator            Generic unary op
+*hl-dundargocUnaryPlus*                   dundargocUnaryOperator       |expr-unary-+|
+*hl-dundargocUnaryMinus*                  dundargocUnaryOperator       |expr-unary--|
+*hl-dundargocNot*                         dundargocUnaryOperator       |expr-!|
 
-*hl-NvimBinaryOperator*              NvimOperator            Generic binary op
-*hl-NvimComparison*                  NvimBinaryOperator      Any |expr4| operator
-*hl-NvimComparisonModifier*          NvimComparison          `#`/`?` near |expr4| op
-*hl-NvimBinaryPlus*                  NvimBinaryOperator      |expr-+|
-*hl-NvimBinaryMinus*                 NvimBinaryOperator      |expr--|
-*hl-NvimConcat*                      NvimBinaryOperator      |expr-.|
-*hl-NvimConcatOrSubscript*           NvimConcat              |expr-.| or |expr-entry|
-*hl-NvimOr*                          NvimBinaryOperator      |expr-barbar|
-*hl-NvimAnd*                         NvimBinaryOperator      |expr-&&|
-*hl-NvimMultiplication*              NvimBinaryOperator      |expr-star|
-*hl-NvimDivision*                    NvimBinaryOperator      |expr-/|
-*hl-NvimMod*                         NvimBinaryOperator      |expr-%|
+*hl-dundargocBinaryOperator*              dundargocOperator            Generic binary op
+*hl-dundargocComparison*                  dundargocBinaryOperator      Any |expr4| operator
+*hl-dundargocComparisonModifier*          dundargocComparison          `#`/`?` near |expr4| op
+*hl-dundargocBinaryPlus*                  dundargocBinaryOperator      |expr-+|
+*hl-dundargocBinaryMinus*                 dundargocBinaryOperator      |expr--|
+*hl-dundargocConcat*                      dundargocBinaryOperator      |expr-.|
+*hl-dundargocConcatOrSubscript*           dundargocConcat              |expr-.| or |expr-entry|
+*hl-dundargocOr*                          dundargocBinaryOperator      |expr-barbar|
+*hl-dundargocAnd*                         dundargocBinaryOperator      |expr-&&|
+*hl-dundargocMultiplication*              dundargocBinaryOperator      |expr-star|
+*hl-dundargocDivision*                    dundargocBinaryOperator      |expr-/|
+*hl-dundargocMod*                         dundargocBinaryOperator      |expr-%|
 
-*hl-NvimTernary*                     NvimOperator            `?` in |expr1|
-*hl-NvimTernaryColon*                NvimTernary             `:` in |expr1|
+*hl-dundargocTernary*                     dundargocOperator            `?` in |expr1|
+*hl-dundargocTernaryColon*                dundargocTernary             `:` in |expr1|
 
-*hl-NvimParenthesis*                 Delimiter               Generic bracket
-*hl-NvimLambda*                      NvimParenthesis         `{`/`}` in |lambda|
-*hl-NvimNestingParenthesis*          NvimParenthesis         `(`/`)` in |expr-nesting|
-*hl-NvimCallingParenthesis*          NvimParenthesis         `(`/`)` in |expr-function|
+*hl-dundargocParenthesis*                 Delimiter               Generic bracket
+*hl-dundargocLambda*                      dundargocParenthesis         `{`/`}` in |lambda|
+*hl-dundargocNestingParenthesis*          dundargocParenthesis         `(`/`)` in |expr-nesting|
+*hl-dundargocCallingParenthesis*          dundargocParenthesis         `(`/`)` in |expr-function|
 
-*hl-NvimSubscript*                   NvimParenthesis         Generic subscript
-*hl-NvimSubscriptBracket*            NvimSubscript           `[`/`]` in |expr-[]|
-*hl-NvimSubscriptColon*              NvimSubscript           `:` in |expr-[:]|
-*hl-NvimCurly*                       NvimSubscript           `{`/`}` in
+*hl-dundargocSubscript*                   dundargocParenthesis         Generic subscript
+*hl-dundargocSubscriptBracket*            dundargocSubscript           `[`/`]` in |expr-[]|
+*hl-dundargocSubscriptColon*              dundargocSubscript           `:` in |expr-[:]|
+*hl-dundargocCurly*                       dundargocSubscript           `{`/`}` in
                                                            |curly-braces-names|
 
-*hl-NvimContainer*                   NvimParenthesis         Generic container
-*hl-NvimDict*                        NvimContainer           `{`/`}` in |dict| literal
-*hl-NvimList*                        NvimContainer           `[`/`]` in |list| literal
+*hl-dundargocContainer*                   dundargocParenthesis         Generic container
+*hl-dundargocDict*                        dundargocContainer           `{`/`}` in |dict| literal
+*hl-dundargocList*                        dundargocContainer           `[`/`]` in |list| literal
 
-*hl-NvimIdentifier*                  Identifier              Generic identifier
-*hl-NvimIdentifierScope*             NvimIdentifier          Namespace: letter
+*hl-dundargocIdentifier*                  Identifier              Generic identifier
+*hl-dundargocIdentifierScope*             dundargocIdentifier          Namespace: letter
                                                            before `:` in
                                                            |internal-variables|
-*hl-NvimIdentifierScopeDelimiter*    NvimIdentifier          `:` after namespace
+*hl-dundargocIdentifierScopeDelimiter*    dundargocIdentifier          `:` after namespace
                                                            letter
-*hl-NvimIdentifierName*              NvimIdentifier          Rest of the ident
-*hl-NvimIdentifierKey*               NvimIdentifier          Identifier after
+*hl-dundargocIdentifierName*              dundargocIdentifier          Rest of the ident
+*hl-dundargocIdentifierKey*               dundargocIdentifier          Identifier after
                                                            |expr-entry|
 
-*hl-NvimColon*                       Delimiter               `:` in |dict| literal
-*hl-NvimComma*                       Delimiter               `,` in |dict| or |list|
+*hl-dundargocColon*                       Delimiter               `:` in |dict| literal
+*hl-dundargocComma*                       Delimiter               `,` in |dict| or |list|
                                                            literal or
                                                            |expr-function|
-*hl-NvimArrow*                       Delimiter               `->` in |lambda|
+*hl-dundargocArrow*                       Delimiter               `->` in |lambda|
 
-*hl-NvimRegister*                    SpecialChar             |expr-register|
-*hl-NvimNumber*                      Number                  Non-prefix digits
+*hl-dundargocRegister*                    SpecialChar             |expr-register|
+*hl-dundargocNumber*                      Number                  Non-prefix digits
                                                            in integer
                                                            |expr-number|
-*hl-NvimNumberPrefix*                Type                    `0` for |octal-number|
+*hl-dundargocNumberPrefix*                Type                    `0` for |octal-number|
                                                            `0x` for |hex-number|
                                                            `0b` for |binary-number|
-*hl-NvimFloat*                       NvimNumber              Floating-point
+*hl-dundargocFloat*                       dundargocNumber              Floating-point
                                                            number
 
-*hl-NvimOptionSigil*                 Type                    `&` in |expr-option|
-*hl-NvimOptionScope*                 NvimIdentifierScope     Option scope if any
-*hl-NvimOptionScopeDelimiter*        NvimIdentifierScopeDelimiter
+*hl-dundargocOptionSigil*                 Type                    `&` in |expr-option|
+*hl-dundargocOptionScope*                 dundargocIdentifierScope     Option scope if any
+*hl-dundargocOptionScopeDelimiter*        dundargocIdentifierScopeDelimiter
                                                            `:` after option scope
-*hl-NvimOptionName*                  NvimIdentifier          Option name
+*hl-dundargocOptionName*                  dundargocIdentifier          Option name
 
-*hl-NvimEnvironmentSigil*            NvimOptionSigil         `$` in |expr-env|
-*hl-NvimEnvironmentName*             NvimIdentifier          Env variable name
+*hl-dundargocEnvironmentSigil*            dundargocOptionSigil         `$` in |expr-env|
+*hl-dundargocEnvironmentName*             dundargocIdentifier          Env variable name
 
-*hl-NvimString*                      String                  Generic string
-*hl-NvimStringBody*                  NvimString              Generic string
+*hl-dundargocString*                      String                  Generic string
+*hl-dundargocStringBody*                  dundargocString              Generic string
                                                            literal body
-*hl-NvimStringQuote*                 NvimString              Generic string quote
-*hl-NvimStringSpecial*               SpecialChar             Generic string
+*hl-dundargocStringQuote*                 dundargocString              Generic string quote
+*hl-dundargocStringSpecial*               SpecialChar             Generic string
                                                            non-literal body
 
-*hl-NvimSingleQuote*                 NvimStringQuote         `'` in |expr-'|
-*hl-NvimSingleQuotedBody*            NvimStringBody          Literal part of
+*hl-dundargocSingleQuote*                 dundargocStringQuote         `'` in |expr-'|
+*hl-dundargocSingleQuotedBody*            dundargocStringBody          Literal part of
                                                            |expr-'| string body
-*hl-NvimSingleQuotedQuote*           NvimStringSpecial       `''` inside |expr-'|
+*hl-dundargocSingleQuotedQuote*           dundargocStringSpecial       `''` inside |expr-'|
                                                            string body
 
-*hl-NvimDoubleQuote*                 NvimStringQuote         `"` in |expr-quote|
-*hl-NvimDoubleQuotedBody*            NvimStringBody          Literal part of
+*hl-dundargocDoubleQuote*                 dundargocStringQuote         `"` in |expr-quote|
+*hl-dundargocDoubleQuotedBody*            dundargocStringBody          Literal part of
                                                            |expr-quote| body
-*hl-NvimDoubleQuotedEscape*          NvimStringSpecial       Valid |expr-quote|
+*hl-dundargocDoubleQuotedEscape*          dundargocStringSpecial       Valid |expr-quote|
                                                            escape sequence
-*hl-NvimDoubleQuotedUnknownEscape*   NvimInvalidValue        Unrecognized
+*hl-dundargocDoubleQuotedUnknownEscape*   dundargocInvalidValue        Unrecognized
                                                            |expr-quote| escape
                                                            sequence
 

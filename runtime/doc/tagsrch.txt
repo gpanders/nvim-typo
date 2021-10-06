@@ -1,4 +1,4 @@
-*tagsrch.txt*   Nvim
+*tagsrch.txt*   dundargoc
 
 
 		  VIM REFERENCE MANUAL    by Bram Moolenaar

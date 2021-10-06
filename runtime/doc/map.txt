@@ -1,4 +1,4 @@
-*map.txt*       Nvim
+*map.txt*       dundargoc
 
 
 		  VIM REFERENCE MANUAL    by Bram Moolenaar
@@ -805,8 +805,8 @@ in the original Vi, you would get back the text before the first undo).
 
 1.10 MAPPING ALT-KEYS					*:map-alt-keys*
 
-In the GUI Nvim handles the |ALT| key itself, thus mapping keys with ALT
-should always work.  But in a terminal Nvim gets a sequence of bytes and has
+In the GUI dundargoc handles the |ALT| key itself, thus mapping keys with ALT
+should always work.  But in a terminal dundargoc gets a sequence of bytes and has
 to figure out whether ALT was pressed.  Terminals may use ESC to indicate that
 ALT was pressed.  If ESC is followed by a {key} within 'ttimeoutlen'
 milliseconds, the ESC is interpreted as:

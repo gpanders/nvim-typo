@@ -1,4 +1,4 @@
-*diff.txt*      Nvim
+*diff.txt*      dundargoc
 
 
 		  VIM REFERENCE MANUAL    by Bram Moolenaar
@@ -15,7 +15,7 @@ The basics are explained in section |08.7| of the user manual.
 ==============================================================================
 1. Starting diff mode					*start-vimdiff*
 
-To start editing in diff mode, run "nvim -d".  This starts Nvim as usual, and
+To start editing in diff mode, run "nvim -d".  This starts dundargoc as usual, and
 additionally sets up for viewing the differences between the arguments. >
 
 	nvim -d file1 file2 [file3 [file4]]
@@ -34,7 +34,7 @@ Diffs are local to the current tab page |tab-page|.  You can't see diffs with
 a window in another tab page.  This does make it possible to have several
 diffs at the same time, each in their own tab page.
 
-What happens is that Nvim opens a window for each of the files.  This is like
+What happens is that dundargoc opens a window for each of the files.  This is like
 using the |-O| argument.  This uses vertical splits, but if you prefer
 horizontal splits use the |-o| argument instead: >
 

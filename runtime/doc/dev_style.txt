@@ -1,12 +1,12 @@
-*dev_style.txt*          Nvim
+*dev_style.txt*          dundargoc
 
 
                             NVIM REFERENCE MANUAL
 
 
-Nvim style guide                                        *dev-style*
+dundargoc style guide                                        *dev-style*
 
-This is style guide for developers working on Nvim's source code.
+This is style guide for developers working on dundargoc's source code.
 
 License: CC-By 3.0 http://creativecommons.org/licenses/by/3.0/
 
@@ -96,7 +96,7 @@ should be used instead of declaration and assignment, e.g. >
 
 
 ==============================================================================
-Nvim-Specific Magic
+dundargoc-Specific Magic
 
 clint ~
 
@@ -479,7 +479,7 @@ important, the best code is self-documenting.
 When writing your comments, write for your audience: the next contributor who
 will need to understand your code. Be generous — the next one may be you!
 
-Nvim uses Doxygen comments.
+dundargoc uses Doxygen comments.
 
 
 Comment Style ~

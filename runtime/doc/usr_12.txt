@@ -1,4 +1,4 @@
-*usr_12.txt*	Nvim
+*usr_12.txt*	dundargoc
 
 		     VIM USER MANUAL - by Bram Moolenaar
 
@@ -237,7 +237,7 @@ simple way: Move the cursor to the word you want to find help on and press >
 
 	K
 
-Nvim will run |:Man| on the word.  If the man page is found, it is displayed.
+dundargoc will run |:Man| on the word.  If the man page is found, it is displayed.
 You can also use the |:Man| command to open a window on a man page: >
 
 	:Man csh

@@ -6,7 +6,7 @@
 
 Diagnostic framework                                     *vim.diagnostic*
 
-Nvim provides a framework for displaying errors or warnings from external
+dundargoc provides a framework for displaying errors or warnings from external
 tools, otherwise known as "diagnostics". These diagnostics can come from a
 variety of sources, such as linters or LSP servers. The diagnostic framework
 is an extension to existing error handling functionality such as the
@@ -49,7 +49,7 @@ A diagnostic is a Lua table with the following keys:
 	message: The diagnostic text
 	source: The source of the diagnostic
 
-Diagnostics use the same indexing as the rest of the Nvim API (i.e. 0-based
+Diagnostics use the same indexing as the rest of the dundargoc API (i.e. 0-based
 rows and columns). |api-indexing|
 
 				*vim.diagnostic.severity* *diagnostic-severity*

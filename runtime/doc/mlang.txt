@@ -1,4 +1,4 @@
-*mlang.txt*     Nvim
+*mlang.txt*     dundargoc
 
 
 		  VIM REFERENCE MANUAL    by Bram Moolenaar

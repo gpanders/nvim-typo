@@ -6,7 +6,7 @@
 
 LSP client/framework                                     *lsp* *LSP*
 
-Nvim supports the Language Server Protocol (LSP), which means it acts as
+dundargoc supports the Language Server Protocol (LSP), which means it acts as
 a client to LSP servers and includes a Lua framework `vim.lsp` for building
 enhanced LSP tools.
 
@@ -21,7 +21,7 @@ analysis (unlike |ctags|).
 ==============================================================================
 QUICKSTART                                              *lsp-quickstart*
 
-Nvim provides an LSP client, but the servers are provided by third parties.
+dundargoc provides an LSP client, but the servers are provided by third parties.
 Follow these steps to get LSP features:
 
   1. Install the nvim-lspconfig plugin.  It provides common configuration for
@@ -42,7 +42,7 @@ Inline diagnostics are enabled automatically, e.g. syntax errors will be
 annotated in the buffer.  But you probably also want to use other features
 like go-to-definition, hover, etc.
 
-While Nvim does not provide an "auto-completion" framework by default, it is
+While dundargoc does not provide an "auto-completion" framework by default, it is
 still possible to get completions from the LSP server. To incorporate these
 completions, it is recommended to use |vim.lsp.omnifunc|, which is an 'omnifunc'
 handler. When 'omnifunc' is set to `v:lua.vim.lsp.omnifunc`, |i_CTRL-X_CTRL-O|
@@ -535,7 +535,7 @@ buf_request_sync({bufnr}, {method}, {params}, {timeout_ms})
                 Sends a request to all server and waits for the response of
                 all of them.
 
-                Calls |vim.lsp.buf_request_all()| but blocks Nvim while
+                Calls |vim.lsp.buf_request_all()| but blocks dundargoc while
                 awaiting the result. Parameters are the same as
                 |vim.lsp.buf_request()| but the return result is different.
                 Wait maximum of {timeout_ms} (default 1000) ms.

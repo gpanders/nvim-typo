@@ -1,4 +1,4 @@
-*scroll.txt*    Nvim
+*scroll.txt*    dundargoc
 
 
 		  VIM REFERENCE MANUAL    by Bram Moolenaar
@@ -230,7 +230,7 @@ This allows quick adjustment of the relative offset of 'scrollbind' windows.
 ==============================================================================
 6. Scrolling with a mouse wheel				*scroll-mouse-wheel*
 
-When your mouse has a scroll wheel, it should work with Nvim in the GUI and
+When your mouse has a scroll wheel, it should work with dundargoc in the GUI and
 any terminal that has mouse support.  By default only vertical scroll wheels
 are supported, but some GUIs also support horizontal scroll wheels.
 

@@ -1,4 +1,4 @@
-*editing.txt*   Nvim
+*editing.txt*   dundargoc
 
 
 		  VIM REFERENCE MANUAL    by Bram Moolenaar

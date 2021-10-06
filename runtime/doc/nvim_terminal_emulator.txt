@@ -1,4 +1,4 @@
-*terminal_emulator.txt*   Nvim
+*terminal_emulator.txt*   dundargoc
 
 
 		 NVIM REFERENCE MANUAL    by Thiago de Arruda
@@ -6,7 +6,7 @@
 
 Terminal emulator				*terminal* *terminal-emulator*
 
-Nvim embeds a VT220/xterm terminal emulator based on libvterm. The terminal is
+dundargoc embeds a VT220/xterm terminal emulator based on libvterm. The terminal is
 presented as a special 'buftype', asynchronously updated as data is received
 from the connected program.
 

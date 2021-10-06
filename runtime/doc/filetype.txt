@@ -1,4 +1,4 @@
-*filetype.txt*  Nvim
+*filetype.txt*  dundargoc
 
 
 		  VIM REFERENCE MANUAL    by Bram Moolenaar
@@ -529,7 +529,7 @@ Local mappings:
 
 MAN					*ft-man-plugin* *:Man* *man.vim*
 
-View manpages in Nvim. Supports highlighting, completion, locales, and
+View manpages in dundargoc. Supports highlighting, completion, locales, and
 navigation. Also see |find-manpage|.
 
 man.vim will always attempt to reuse the closest man window (above/left) but
@@ -570,7 +570,7 @@ Variables:
                           empty. Enabled by default. Set |FALSE| to enable soft
                           wrapping.
 
-To use Nvim as a manpager: >
+To use dundargoc as a manpager: >
      export MANPAGER='nvim +Man!'
 
 Note that when running `man` from the shell and with that `MANPAGER` in your

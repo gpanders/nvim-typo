@@ -1,4 +1,4 @@
-*term.txt*      Nvim
+*term.txt*      dundargoc
 
 
                             NVIM REFERENCE MANUAL
@@ -6,7 +6,7 @@
 
 Terminal UI						*TUI* *tui*
 
-Nvim uses a list of terminal capabilities to display its user interface
+dundargoc uses a list of terminal capabilities to display its user interface
 (except in |--embed| and |--headless| modes). If that information is wrong,
 the screen may be messed up or keys may not be recognized.
 
@@ -15,14 +15,14 @@ the screen may be messed up or keys may not be recognized.
 ==============================================================================
 Startup						*startup-terminal*
 
-Nvim guesses the terminal type when it starts (except in |--embed| and
+dundargoc guesses the terminal type when it starts (except in |--embed| and
 |--headless| modes). The |$TERM| environment variable is the primary hint that
 determines the terminal type.
 
 					*terminfo* *E557* *E558* *E559*
 The terminfo database is used if available.
 
-The Unibilium library (used by Nvim to read terminfo) allows you to override
+The Unibilium library (used by dundargoc to read terminfo) allows you to override
 the system terminfo with one in $HOME/.terminfo/ directory, in part or in
 whole.
 
@@ -35,7 +35,7 @@ a non-superuser:
 <
 								*$TERM*
 The $TERM environment variable must match the terminal you are using!
-Otherwise Nvim cannot know what sequences your terminal expects, and weird
+Otherwise dundargoc cannot know what sequences your terminal expects, and weird
 or sub-optimal behavior will result (scrolling quirks, wrong colors, etc.).
 
 $TERM is also important because it is forwarded by SSH to the remote session,
@@ -56,7 +56,7 @@ unlike most other environment variables.
   Terminal.app                nsterm                              N
   tmux                        tmux, tmux-256color                 Y
   Windows/ConEmu              conemu                              Y
-  Windows/Cygwin-built Nvim   cygwin                              Y
+  Windows/Cygwin-built dundargoc   cygwin                              Y
   Windows/Interix             interix                             Y
   Windows/VTP console         vtpcon                              Y
   Windows/legacy console      win32con                            Y
@@ -64,7 +64,7 @@ unlike most other environment variables.
 
 					*builtin-terms* *builtin_terms*
 If a |terminfo| database is not available or there is no entry for the current
-terminal, Nvim will map |$TERM| to a builtin entry according to the above
+terminal, dundargoc will map |$TERM| to a builtin entry according to the above
 table, or "ansi" if there is no match. For example "TERM=putty-256color" will
 be mapped to the builtin "putty" entry. See also |tui-colors|.
 
@@ -97,41 +97,41 @@ your init.vim.  Example: >
     endif
 <
 					*scroll-region* *xterm-scroll-region*
-Where possible, Nvim will use the terminal's ability to set a scroll region in
+Where possible, dundargoc will use the terminal's ability to set a scroll region in
 order to redraw faster when a window is scrolled.  If the terminal's terminfo
 description describes an ability to set top and bottom scroll margins, that is
 used.
 
 This will not speed up scrolling in a window that is not the full width of the
 terminal.  Xterm has an extra ability, not described by terminfo, to set left
-and right scroll margins as well.  If Nvim detects that the terminal is Xterm,
+and right scroll margins as well.  If dundargoc detects that the terminal is Xterm,
 it will make use of this ability to speed up scrolling that is not the full
 width of the terminal.
 
 							*tui-colors*
-Nvim uses 256 colours by default, ignoring |terminfo| for most terminal types,
+dundargoc uses 256 colours by default, ignoring |terminfo| for most terminal types,
 including "linux" (whose virtual terminals have had 256-colour support since
 4.8) and anything claiming to be "xterm".  Also when $COLORTERM or $TERM
 contain the string "256".
 
-Nvim similarly assumes that any terminal emulator that sets $COLORTERM to any
+dundargoc similarly assumes that any terminal emulator that sets $COLORTERM to any
 value, is capable of at least 16-colour operation.
 
 						*true-color* *xterm-true-color*
-Nvim emits true (24-bit) colours in the terminal, if 'termguicolors' is set.
+dundargoc emits true (24-bit) colours in the terminal, if 'termguicolors' is set.
 
 It uses the "setrgbf" and "setrgbb" |terminfo| extensions (proposed by Rüdiger
-Sonderfeld in 2013). If your terminfo definition is missing them, then Nvim
+Sonderfeld in 2013). If your terminfo definition is missing them, then dundargoc
 will decide whether to add them to your terminfo definition, using the ISO
 8613-6:1994/ITU T.416:1993 control sequences for setting RGB colours (but
 modified to use semicolons instead of colons unless the terminal is known to
 follow the standard).
 
 Another convention, pioneered in 2016 by tmux, is the "Tc" terminfo extension.
-If terminfo has this flag, Nvim will add constructed "setrgbf" and "setrgbb"
+If terminfo has this flag, dundargoc will add constructed "setrgbf" and "setrgbb"
 capabilities as if they had been in the terminfo definition.
 
-If terminfo does not (yet) have this flag, Nvim will fall back to $TERM and
+If terminfo does not (yet) have this flag, dundargoc will fall back to $TERM and
 other environment variables.  It will add constructed "setrgbf" and "setrgbb"
 capabilities in the case of the the "rxvt", "linux", "st", "tmux", and "iterm"
 terminal types, or when Konsole, genuine Xterm, a libvte terminal emulator
@@ -139,20 +139,20 @@ version 0.36 or later, or a terminal emulator that sets the COLORTERM
 environment variable to "truecolor" is detected.
 
 							*xterm-resize*
-Nvim can resize the terminal display on some terminals that implement an
+dundargoc can resize the terminal display on some terminals that implement an
 extension pioneered by dtterm.  |terminfo| does not have a flag for this
-extension.  So Nvim simply assumes that (all) "dtterm", "xterm", "teraterm",
+extension.  So dundargoc simply assumes that (all) "dtterm", "xterm", "teraterm",
 "rxvt" terminal types, and Konsole, are capable of this.
 
 							*tui-cursor-shape*
-Nvim will adjust the shape of the cursor from a block to a line when in insert
+dundargoc will adjust the shape of the cursor from a block to a line when in insert
 mode (or as specified by the 'guicursor' option), on terminals that support
 it.  It uses the same |terminfo| extensions that were pioneered by tmux for
 this: "Ss" and "Se".
-Similarly, if you set the cursor highlight group with blend=100, Nvim hides
+Similarly, if you set the cursor highlight group with blend=100, dundargoc hides
 the cursor through the "cvvis" and "civis" extensions.
 
-If your terminfo definition is missing them, then Nvim will decide whether to
+If your terminfo definition is missing them, then dundargoc will decide whether to
 add them to your terminfo definition, by looking at $TERM and other
 environment variables.  For the "rxvt", "putty", "linux", "screen",
 "teraterm", and "iterm" terminal types, or when Konsole, a libvte-based
@@ -160,12 +160,12 @@ terminal emulator, or genuine Xterm are detected, it will add constructed
 "Ss" and "Se" capabilities.
 
 							*tui-cursor-tmux*
-Within tmux it may appear that Nvim is not changing the cursor, but in fact it
-is tmux receiving instructions from Nvim to change the cursor and not knowing
-what to do in turn.  tmux must translate what it receives from Nvim into
+Within tmux it may appear that dundargoc is not changing the cursor, but in fact it
+is tmux receiving instructions from dundargoc to change the cursor and not knowing
+what to do in turn.  tmux must translate what it receives from dundargoc into
 whatever control sequence is appropriate for the host terminal.  It shares
-a common mechanism with Nvim, of using the "Ss" and "Se" capabilities from
-terminfo (for the output terminal) if they are present. Unlike Nvim, if they
+a common mechanism with dundargoc, of using the "Ss" and "Se" capabilities from
+terminfo (for the output terminal) if they are present. Unlike dundargoc, if they
 are not in terminfo you must add them by setting "terminal-overrides" in
 ~/.tmux.conf .
 
@@ -209,7 +209,7 @@ between them you might want to set the 'timeout' and/or 'ttimeout' option.
 See the "Options" chapter |options|.
 
 If you are using a color terminal that is slow when displaying lines beyond
-the end of a buffer, this is because Nvim is drawing the whitespace twice, in
+the end of a buffer, this is because dundargoc is drawing the whitespace twice, in
 two sets of colours and attributes.  To prevent this, use this command: >
 	hi NonText cterm=NONE ctermfg=NONE
 This draws the spaces with the default colours and attributes, which allows the

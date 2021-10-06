@@ -1,4 +1,4 @@
-*motion.txt*    Nvim
+*motion.txt*    dundargoc
 
 
 		  VIM REFERENCE MANUAL    by Bram Moolenaar
@@ -1115,7 +1115,7 @@ Finally, navigate to a different webpage, new.com.  The history is
 - third.com
 - new.com <--
 
-When the jumpoptions includes "stack", this is the behavior of Nvim as well.
+When the jumpoptions includes "stack", this is the behavior of dundargoc as well.
 That is, given a jumplist like the following in which CTRL-O has been used to
 move back three times to location X
 

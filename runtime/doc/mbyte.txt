@@ -1,4 +1,4 @@
-*mbyte.txt*     Nvim
+*mbyte.txt*     dundargoc
 
 
 		  VIM REFERENCE MANUAL	  by Bram Moolenaar et al.
@@ -54,13 +54,13 @@ See |mbyte-locale| for details.
 
 ENCODING
 
-Nvim always uses UTF-8 internally. Thus 'encoding' option is always set
+dundargoc always uses UTF-8 internally. Thus 'encoding' option is always set
 to "utf-8" and cannot be changed.
 
 All the text that is used inside Vim will be in UTF-8. Not only the text in
 the buffers, but also in registers, variables, etc.
 
-You can edit files in different encodings than UTF-8.  Nvim
+You can edit files in different encodings than UTF-8.  dundargoc
 will convert the file when you read it and convert it back when you write it.
 See 'fileencoding', 'fileencodings' and |++enc|.
 
@@ -79,7 +79,7 @@ must be exactly twice as wide as 'guifont'. Example for UTF-8: >
 	:set guifont=-misc-fixed-medium-r-normal-*-18-120-100-100-c-90-iso10646-1
 	:set guifontwide=-misc-fixed-medium-r-normal-*-18-120-100-100-c-180-iso10646-1
 
-You can also set 'guifont' alone, the Nvim GUI will try to find a matching
+You can also set 'guifont' alone, the dundargoc GUI will try to find a matching
 'guifontwide' for you.
 
 
@@ -185,7 +185,7 @@ You could make a small shell script for this.
 ==============================================================================
 Encoding				*mbyte-encoding*
 
-In Nvim UTF-8 is always used internally to encode characters.
+In dundargoc UTF-8 is always used internally to encode characters.
  This applies to all the places where text is used, including buffers (files
  loaded into memory), registers and variables.
 

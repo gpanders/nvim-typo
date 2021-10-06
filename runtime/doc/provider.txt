@@ -1,4 +1,4 @@
-*provider.txt*		Nvim
+*provider.txt*		dundargoc
 
 
 		 NVIM REFERENCE MANUAL    by Thiago de Arruda
@@ -6,7 +6,7 @@
 
 Providers	 				*provider*
 
-Nvim delegates some features to dynamic "providers". This document describes
+dundargoc delegates some features to dynamic "providers". This document describes
 the providers and how to install them.
 						*E319*
 Use of a feature requiring a missing provider is an error: >
@@ -20,17 +20,17 @@ Run the |:checkhealth| command, and review the sections below.
 ==============================================================================
 Python integration				*provider-python*
 
-Nvim supports Python |remote-plugin|s and the Vim legacy |python2| and
+dundargoc supports Python |remote-plugin|s and the Vim legacy |python2| and
 |python3| interfaces (which are implemented as remote-plugins).
 
 Note: Only the Vim 7.3 legacy interface is supported, not later features such
-as |python-bindeval| (Vim 7.4); use the Nvim API instead.
+as |python-bindeval| (Vim 7.4); use the dundargoc API instead.
 
 
 PYTHON QUICKSTART ~
 
 To use Python plugins, you need the "pynvim" module. Run |:checkhealth| to see
-if you already have it (some package managers install the module with Nvim
+if you already have it (some package managers install the module with dundargoc
 itself).
 
 For Python 3 plugins:
@@ -98,13 +98,13 @@ See also: https://github.com/zchee/deoplete-jedi/wiki/Setting-up-Python-for-Neov
 ==============================================================================
 Ruby integration		    	      *provider-ruby*
 
-Nvim supports Ruby |remote-plugin|s and the Vim legacy |ruby-vim| interface
-(which is itself implemented as a Nvim remote-plugin).
+dundargoc supports Ruby |remote-plugin|s and the Vim legacy |ruby-vim| interface
+(which is itself implemented as a dundargoc remote-plugin).
 
 
 RUBY QUICKSTART ~
 
-To use Ruby plugins with Nvim, install the latest "neovim" RubyGem: >
+To use Ruby plugins with dundargoc, install the latest "neovim" RubyGem: >
     gem install neovim
 
 Run |:checkhealth| to see if your system is up-to-date.
@@ -129,17 +129,17 @@ To use the RVM "system" Ruby installation: >
 ==============================================================================
 Perl integration				*provider-perl*
 
-Nvim supports Perl |remote-plugin|s on Unix platforms. Support for polling STDIN
+dundargoc supports Perl |remote-plugin|s on Unix platforms. Support for polling STDIN
 on MS-Windows is currently lacking from all known event loop implementations.
 The Vim legacy |perl-vim| interface is also supported (which is itself
-implemented as a Nvim remote-plugin).
+implemented as a dundargoc remote-plugin).
 https://github.com/jacquesg/p5-Neovim-Ext
 
 Note: Only perl versions from 5.22 onward are supported.
 
 PERL QUICKSTART~
 
-To use perl remote-plugins with Nvim, install the "Neovim::Ext" cpan package: >
+To use perl remote-plugins with dundargoc, install the "Neovim::Ext" cpan package: >
     cpanm -n Neovim::Ext
 
 Run |:checkhealth| to see if your system is up-to-date.
@@ -158,13 +158,13 @@ check for has("perl").  >
 ==============================================================================
 Node.js integration				*provider-nodejs*
 
-Nvim supports Node.js |remote-plugin|s.
+dundargoc supports Node.js |remote-plugin|s.
 https://github.com/neovim/node-client/
 
 
 NODEJS QUICKSTART~
 
-To use javascript remote-plugins with Nvim, install the "neovim" npm package: >
+To use javascript remote-plugins with dundargoc, install the "neovim" npm package: >
     npm install -g neovim
 
 Run |:checkhealth| to see if your system is up-to-date.
@@ -178,14 +178,14 @@ To disable Node.js support: >
 						*g:node_host_prog*
 Command to start the Node.js host. Setting this makes startup faster.
 
-By default, Nvim searches for "neovim-node-host" using "npm root -g", which
+By default, dundargoc searches for "neovim-node-host" using "npm root -g", which
 can be slow. To avoid this, set g:node_host_prog to the host path: >
     let g:node_host_prog = '/usr/local/bin/neovim-node-host'
 <
 ==============================================================================
 Clipboard integration 			      *provider-clipboard* *clipboard*
 
-Nvim has no direct connection to the system clipboard. Instead it depends on
+dundargoc has no direct connection to the system clipboard. Instead it depends on
 a |provider| which transparently uses shell commands to communicate with the
 system clipboard or any other clipboard "backend".
 
@@ -197,7 +197,7 @@ See 'clipboard' for details and options.
 
 							      *clipboard-tool*
 The presence of a working clipboard tool implicitly enables the '+' and '*'
-registers. Nvim looks for these clipboard tools, in order of priority:
+registers. dundargoc looks for these clipboard tools, in order of priority:
 
   - |g:clipboard|
   - pbcopy, pbpaste (macOS)
@@ -227,7 +227,7 @@ For example this configuration integrates the tmux clipboard: >
           \   'cache_enabled': 1,
           \ }
 
-If "cache_enabled" is |TRUE| then when a selection is copied Nvim will cache
+If "cache_enabled" is |TRUE| then when a selection is copied dundargoc will cache
 the selection until the copy command process dies. When pasting, if the copy
 process has not died the cached selection is applied.
 
@@ -257,7 +257,7 @@ Paste 							*provider-paste* *paste*
 text to the editor", whereas clipboard provides features like |quote-+| to get
 and set the OS clipboard directly.  For example, middle-click or CTRL-SHIFT-v
 (macOS: CMD-v) in your terminal is "paste", not "clipboard": the terminal
-application (Nvim) just gets a stream of text, it does not interact with the
+application (dundargoc) just gets a stream of text, it does not interact with the
 clipboard directly.
 
 							*bracketed-paste-mode*
@@ -302,7 +302,7 @@ CLIPBOARD is typically used in X11 applications for copy/paste operations
 (CTRL-c/CTRL-v), while PRIMARY is used for the last selected text, which is
 generally inserted with the middle mouse button.
 
-Nvim's X11 clipboard providers only use the PRIMARY and CLIPBOARD selections,
+dundargoc's X11 clipboard providers only use the PRIMARY and CLIPBOARD selections,
 for the "*" and "+" registers, respectively.
 
 ==============================================================================

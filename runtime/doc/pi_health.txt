@@ -8,7 +8,7 @@ Author: TJ DeVries <devries.timothyj@gmail.com>
 Introduction                            *health*
 
 health.vim is a minimal framework to help with troubleshooting user
-configuration. Nvim ships with healthchecks for configuration, performance,
+configuration. dundargoc ships with healthchecks for configuration, performance,
 python support, ruby support, clipboard support, and more.
 
 To run the healthchecks, use this command: >
@@ -23,7 +23,7 @@ Commands                                *health-commands*
                                         *:checkhealth* *:CheckHealth*
 :checkhealth          Run all healthchecks.
                                         *E5009*
-                Nvim depends on |$VIMRUNTIME|, 'runtimepath' and 'packpath' to
+                dundargoc depends on |$VIMRUNTIME|, 'runtimepath' and 'packpath' to
                 find the standard "runtime files" for syntax highlighting,
                 filetype-specific behavior, and standard plugins (including
                 :checkhealth).  If the runtime files cannot be found then
@@ -31,7 +31,7 @@ Commands                                *health-commands*
 
 :checkhealth {plugins}
                 Run healthcheck(s) for one or more plugins. E.g. to run only
-                the standard Nvim healthcheck: >
+                the standard dundargoc healthcheck: >
                         :checkhealth nvim
 <
                 To run the healthchecks for the "foo" and "bar" plugins
@@ -75,7 +75,7 @@ health.report_error({msg} [, {advice}])                 *health.report_error()*
 Create a Lua healthcheck                *health-dev-lua*
 
 Healthchecks are functions that check the user environment, configuration,
-etc. Nvim has built-in healthchecks in $VIMRUNTIME/autoload/health/.
+etc. dundargoc has built-in healthchecks in $VIMRUNTIME/autoload/health/.
 
 To add a new healthcheck for your own plugin, simply define a Lua module in
 your plugin that returns a table with a "check()" function. |:checkhealth|
@@ -150,7 +150,7 @@ health#{plugin}#check()                                 *health.user_checker*
 Create a healthcheck                    *health-dev-vim*
 
 Healthchecks are functions that check the user environment, configuration,
-etc. Nvim has built-in healthchecks in $VIMRUNTIME/autoload/health/.
+etc. dundargoc has built-in healthchecks in $VIMRUNTIME/autoload/health/.
 
 To add a new healthcheck for your own plugin, simply define a
 health#{plugin}#check() function in autoload/health/{plugin}.vim.

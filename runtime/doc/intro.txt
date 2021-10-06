@@ -1,10 +1,10 @@
-*intro.txt*     Nvim
+*intro.txt*     dundargoc
 
 
 			    NVIM REFERENCE MANUAL
 
 
-Nvim							*ref* *reference*
+dundargoc							*ref* *reference*
 
                                       Type |gO| to see the table of contents.
 
@@ -22,10 +22,10 @@ is not located in the default place.  You can jump to subjects like with tags:
 Use CTRL-] to jump to a subject under the cursor, use CTRL-T to jump back.
 
 							*pronounce*
-Vim is pronounced as one word, like Jim.  So Nvim is N-Jim, which sounds like
-"Ninja".  Starting Nvim is like performing a roundhouse kick.
+Vim is pronounced as one word, like Jim.  So dundargoc is N-Jim, which sounds like
+"Ninja".  Starting dundargoc is like performing a roundhouse kick.
 
-This manual is a reference for all Nvim editor and API features.  It is not an
+This manual is a reference for all dundargoc editor and API features.  It is not an
 introduction; instead for beginners, there is a hands-on |tutor| and a user
 manual |usr_toc.txt|.
 
@@ -37,7 +37,7 @@ There are many books on Vi and Vim.  We recommend:
 	https://vimcasts.org/publications/
 
 "Practical Vim" is acclaimed for its focus on quickly learning common editing
-tasks with Vim.  "Modern Vim" explores new features in Nvim and Vim 8.
+tasks with Vim.  "Modern Vim" explores new features in dundargoc and Vim 8.
 
 	"Vim - Vi Improved" by Steve Oualline
 
@@ -48,12 +48,12 @@ For more information try one of these:
 	https://www.vim.org/iccf/click5.html
 
 ==============================================================================
-Nvim on the interwebs					*internet*
+dundargoc on the interwebs					*internet*
 
 			*www* *faq* *distribution* *download*
 
-	Nvim home page:	  https://neovim.io/
-	Nvim FAQ:	  https://github.com/neovim/neovim/wiki/FAQ
+	dundargoc home page:	  https://neovim.io/
+	dundargoc FAQ:	  https://github.com/neovim/neovim/wiki/FAQ
 	Downloads:	  https://github.com/neovim/neovim/releases
 	Vim FAQ:	  https://vimhelp.org/vim_faq.txt.html
 
@@ -65,10 +65,10 @@ https://github.com/neovim/neovim/issues
 Be brief, yet complete.  Always give a reproducible example and try to find
 out which settings or other things trigger the bug.
 
-If Nvim crashes, try to get a backtrace.  See |debug.txt|.
+If dundargoc crashes, try to get a backtrace.  See |debug.txt|.
 
 ==============================================================================
-Sponsor Vim/Nvim development				*sponsor* *register*
+Sponsor Vim/dundargoc development				*sponsor* *register*
 
 Fixing bugs and adding new features takes a lot of time and effort.  To show
 your appreciation for the work and motivate Bram and others to continue
@@ -191,7 +191,7 @@ Nvi	The "New" Vi.  The version of Vi that comes with BSD 4.4 and FreeBSD.
 Elvis	Another Vi clone, made by Steve Kirkendall.  Very compact but isn't
 	as flexible as Vim.  Source code is freely available.
 
-Vim	Nvim is based on Vim.  https://www.vim.org/
+Vim	dundargoc is based on Vim.  https://www.vim.org/
 
 ==============================================================================
 Notation						*notation*
@@ -380,10 +380,10 @@ Note:
   terminal.
 - If numlock is on the |TUI| receives plain ASCII values, so mapping <k0>,
   <k1>, ..., <k9> and <kPoint> will not work.
-- Nvim supports mapping multibyte chars with modifiers such as `<M-ä>`. Which
+- dundargoc supports mapping multibyte chars with modifiers such as `<M-ä>`. Which
   combinations actually work depends on the the UI or host terminal.
 - When a key is pressed using a meta or alt modifier and no mapping exists
-  for that keypress, Nvim behaves as though <Esc> was pressed before the key.
+  for that keypress, dundargoc behaves as though <Esc> was pressed before the key.
 
 								*<>*
 Examples are often given in the <> notation.  Sometimes this is just to make
@@ -694,7 +694,7 @@ to be able to read most messages on the last line.
 Definitions						*definitions* *jargon*
 
   buffer		Contains lines of text, usually from a file.
-  screen		The whole area that Nvim uses to display things.
+  screen		The whole area that dundargoc uses to display things.
   window		A view on a buffer.  There can be multiple windows for
 			one buffer.
   frame			Windows are kept in a tree of frames.  Each frame
@@ -731,7 +731,7 @@ A difference is made between four types of lines:
 			lines with wrapping, line breaks, etc.  applied.  They
 			can only be as long as the width of the window allows,
 			longer lines are wrapped or truncated.
-  screen lines		The lines of the screen that Nvim uses.  Consists of
+  screen lines		The lines of the screen that dundargoc uses.  Consists of
 			the window lines of all windows, with status lines
 			and the command line added.  They can only be as long
 			as the width of the screen allows.  When the command
@@ -762,19 +762,19 @@ All external UIs and remote plugins (as opposed to regular Vim plugins) are
 to abstract or wrap the RPC API for the convenience of other applications
 (just like a REST client or SDK such as boto3 for AWS: you can speak AWS REST
 using an HTTP client like curl, but boto3 wraps that in a convenient python
-interface). For example, the Nvim lua-client is an API client:
+interface). For example, the dundargoc lua-client is an API client:
     https://github.com/neovim/lua-client
 
 
 Host ~
-A plugin "host" is both a client (of the Nvim API) and a server (of an
+A plugin "host" is both a client (of the dundargoc API) and a server (of an
 external platform, e.g. python). It is a remote plugin that hosts other
 plugins.
 
 
 Remote plugin ~
 Arbitrary code registered via |:UpdateRemotePlugins|, that runs in a separate
-process and communicates with Nvim via the |api|.
+process and communicates with dundargoc via the |api|.
 
 
 ==============================================================================

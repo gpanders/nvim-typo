@@ -1,4 +1,4 @@
-*recover.txt*   Nvim
+*recover.txt*   dundargoc
 
 
 		  VIM REFERENCE MANUAL    by Bram Moolenaar

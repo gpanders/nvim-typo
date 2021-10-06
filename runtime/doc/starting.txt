@@ -1,4 +1,4 @@
-*starting.txt*  Nvim
+*starting.txt*  dundargoc
 
 
 		  VIM REFERENCE MANUAL    by Bram Moolenaar
@@ -9,13 +9,13 @@ Starting Vim						*starting*
                                       Type |gO| to see the table of contents.
 
 ==============================================================================
-Nvim arguments						*vim-arguments*
+dundargoc arguments						*vim-arguments*
 
-Most often, Nvim is started to edit a single file with the command: >
+Most often, dundargoc is started to edit a single file with the command: >
 
 	nvim filename
 
-More generally, Nvim is started with: >
+More generally, dundargoc is started with: >
 
 	nvim [option | filename] ..
 
@@ -90,7 +90,7 @@ argument.
 		See |info-message| about capturing the text.
 
 							*--clean*
---clean		Mimics a fresh install of Nvim:
+--clean		Mimics a fresh install of dundargoc:
 		- Skips initializations from files and environment variables.
 		- No 'shada' file is read or written.
 		- Excludes user directories from 'runtimepath'
@@ -188,7 +188,7 @@ argument.
 		changes and writing.
 
 -e							*-e* *-E*
--E		Start Nvim in Ex mode |gQ|.
+-E		Start dundargoc in Ex mode |gQ|.
 
 		If stdin is not a TTY:
 		  -e reads/executes stdin as Ex commands.
@@ -320,7 +320,7 @@ argument.
 			:source! {scriptin}
 <		Reads from stdin if {scriptin} is "-": >
 			echo "ifoo" | nvim -s -
-<		If the end of the file is reached before Nvim exits, further
+<		If the end of the file is reached before dundargoc exits, further
 		characters are read from the keyboard.
 
 		Does not work with |-es|.  See also |complex-repeat|.
@@ -345,7 +345,7 @@ argument.
 
 							*--embed*
 --embed		Use stdin/stdout as a msgpack-RPC channel, so applications can
-		embed and control Nvim via the RPC |API|.
+		embed and control dundargoc via the RPC |API|.
 
 		Waits for the client ("embedder") to call |nvim_ui_attach()|
 		before sourcing startup files and reading buffers, so that UIs
@@ -389,7 +389,7 @@ argument.
 ==============================================================================
 Initialization					*initialization* *startup*
 
-At startup, Nvim checks environment variables and files and sets values
+At startup, dundargoc checks environment variables and files and sets values
 accordingly, proceeding as follows:
 
 1. Set the 'shell' option			*SHELL* *COMSPEC*
@@ -404,7 +404,7 @@ accordingly, proceeding as follows:
 	useful for debugging the initializations.
 
 3. Wait for UI to connect.
-	Nvim started with |--embed| waits for the UI to connect before
+	dundargoc started with |--embed| waits for the UI to connect before
 	proceeding to load user configuration.
 
 4. Setup |default-mappings| and  |default-autocmds|.
@@ -423,13 +423,13 @@ accordingly, proceeding as follows:
 	Windows			~/AppData/Local/nvim/init.vim	(or init.lua)
 	|$XDG_CONFIG_HOME|	$XDG_CONFIG_HOME/nvim/init.vim	(or init.lua)
 
-	If Nvim was started with "-u {file}" then {file} is used as the config
+	If dundargoc was started with "-u {file}" then {file} is used as the config
 	and all initializations until 5. are skipped. $MYVIMRC is not set.
 	"nvim -u NORC" can be used to skip these initializations without
 	reading a file.  "nvim -u NONE" also skips plugins and syntax
 	highlighting.  |-u|
 
-	If Nvim was started with |-es| all initializations until 5. are
+	If dundargoc was started with |-es| all initializations until 5. are
 	skipped.
 						*system-vimrc* *sysinit.vim*
      a. The system vimrc file is read for initializations.  If
@@ -500,7 +500,7 @@ accordingly, proceeding as follows:
 9. Set 'shellpipe' and 'shellredir'
 	The 'shellpipe' and 'shellredir' options are set according to the
 	value of the 'shell' option, unless they have been set before.
-	This means that Nvim will figure out the values of 'shellpipe' and
+	This means that dundargoc will figure out the values of 'shellpipe' and
 	'shellredir' for you, unless you have set them yourself.
 
 10. Set 'updatecount' to zero, if "-n" command argument used
@@ -580,7 +580,7 @@ setting can affect the entire editor in ways that are not initially obvious.
 
 To find the cause of a problem in your config, you must "bisect" it:
 1. Remove or disable half of your |config|.
-2. Restart Nvim.
+2. Restart dundargoc.
 3. If the problem still occurs, goto 1. 
 4. If the problem is gone, restore half of the removed lines.
 5. Continue narrowing your config in this way, until you find the setting or
@@ -597,11 +597,11 @@ to 'shortmess'.
 ==============================================================================
 $VIM and $VIMRUNTIME
 								*$VIM*
-The environment variable "$VIM" is used to locate various user files for Nvim,
+The environment variable "$VIM" is used to locate various user files for dundargoc,
 such as the user |config|.  This depends on the system, see
 |startup|.
 
-Nvim will try to get the value for $VIM in this order:
+dundargoc will try to get the value for $VIM in this order:
 
 1. Environment variable $VIM, if it is set.
 2. Path derived from the 'helpfile' option, unless it contains some
@@ -611,14 +611,14 @@ Nvim will try to get the value for $VIM in this order:
 3. Path derived from the location of the `nvim` executable.
 4. Compile-time defined installation directory (see output of ":version").
 
-After doing this once, Nvim sets the $VIM environment variable.
+After doing this once, dundargoc sets the $VIM environment variable.
 
 								*$VIMRUNTIME*
 The environment variable "$VIMRUNTIME" is used to locate various support
 files, such as the documentation and syntax-highlighting files.  For example,
 the main help file is normally "$VIMRUNTIME/doc/help.txt".
 
-Nvim will try to get the value for $VIMRUNTIME in this order:
+dundargoc will try to get the value for $VIMRUNTIME in this order:
 
 1. Environment variable $VIMRUNTIME, if it is set.
 2. Directory path "$VIM/vim{version}", if it exists, where {version} is the
@@ -630,7 +630,7 @@ Nvim will try to get the value for $VIMRUNTIME in this order:
 6. Path derived from the 'helpfile' option (if it doesn't contain '$') with
    "doc/help.txt" removed from the end.
 
-After doing this once, Nvim sets the $VIMRUNTIME environment variable.
+After doing this once, dundargoc sets the $VIMRUNTIME environment variable.
 
 In case you need the value of $VIMRUNTIME in a shell (e.g., for a script that
 greps in the help files) you might be able to use this: >
@@ -641,21 +641,21 @@ greps in the help files) you might be able to use this: >
 Suspending						*suspend*
 
 					*CTRL-Z* *v_CTRL-Z*
-CTRL-Z			Suspend Nvim, like ":stop".
+CTRL-Z			Suspend dundargoc, like ":stop".
 			Works in Normal and in Visual mode.  In Insert and
 			Command-line mode, the CTRL-Z is inserted as a normal
-			character.  In Visual mode Nvim goes back to Normal
+			character.  In Visual mode dundargoc goes back to Normal
 			mode.
 
 :sus[pend][!]	or			*:sus* *:suspend* *:st* *:stop*
-:st[op][!]		Suspend Nvim using OS "job control"; it will continue
+:st[op][!]		Suspend dundargoc using OS "job control"; it will continue
 			if you make it the foreground job again.  Triggers
 			|VimSuspend| before suspending and |VimResume| when
 			resumed.
 			If "!" is not given and 'autowrite' is set, every
 			buffer with changes and a file name is written out.
 			If "!" is given or 'autowrite' is not set, changed
-			buffers are not written, don't forget to bring Nvim
+			buffers are not written, don't forget to bring dundargoc
 			back to the foreground later!
 
 In the GUI, suspending is implementation-defined.
@@ -1319,7 +1319,7 @@ file when reading and include:
 ==============================================================================
 Standard Paths					*standard-path*
 
-Nvim stores configuration, data, and logs in standard locations. Plugins are 
+dundargoc stores configuration, data, and logs in standard locations. Plugins are 
 strongly encouraged to follow this pattern also. Use |stdpath()| to get the 
 paths.
 
@@ -1330,12 +1330,12 @@ The $XDG_CONFIG_HOME and $XDG_DATA_HOME environment variables are used if they
 exist, otherwise default values (listed below) are used.
 
 CONFIG DIRECTORY (DEFAULT) ~
-                  *$XDG_CONFIG_HOME*            Nvim: stdpath("config")
+                  *$XDG_CONFIG_HOME*            dundargoc: stdpath("config")
     Unix:         ~/.config                   ~/.config/nvim
     Windows:      ~/AppData/Local             ~/AppData/Local/nvim
 
 DATA DIRECTORY (DEFAULT) ~
-                  *$XDG_DATA_HOME*              Nvim: stdpath("data")
+                  *$XDG_DATA_HOME*              dundargoc: stdpath("data")
     Unix:         ~/.local/share              ~/.local/share/nvim
     Windows:      ~/AppData/Local             ~/AppData/Local/nvim-data
 
@@ -1343,7 +1343,7 @@ Note: Throughout the user manual these defaults are used as placeholders, e.g.
 "~/.config" is understood to mean "$XDG_CONFIG_HOME or ~/.config".
 
 LOG FILE					*$NVIM_LOG_FILE*
-Besides 'debug' and 'verbose', Nvim keeps a general log file for internal
+Besides 'debug' and 'verbose', dundargoc keeps a general log file for internal
 debugging, plugins and RPC clients. >
 	:echo $NVIM_LOG_FILE
 By default, the file is located at stdpath('cache')/log unless that path 

@@ -1,4 +1,4 @@
-*usr_08.txt*	Nvim
+*usr_08.txt*	dundargoc
 
 		     VIM USER MANUAL - by Bram Moolenaar
 
@@ -337,11 +337,11 @@ file in the argument list.  ":vertical all" does it with vertical splits.
 ==============================================================================
 *08.7*	Viewing differences with diff mode
 
-There is a special way to start Nvim, which shows the differences between two
+There is a special way to start dundargoc, which shows the differences between two
 files.  Let's take a file "main.c" and insert a few characters in one line.
 Write this file with the 'backup' option set, so that the backup file
 "main.c~" will contain the previous version of the file.
-Type this command in a shell to start Nvim in diff mode: >
+Type this command in a shell to start dundargoc in diff mode: >
 
 	nvim -d main.c~ main.c
 

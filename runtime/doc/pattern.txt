@@ -1,4 +1,4 @@
-*pattern.txt*   Nvim
+*pattern.txt*   dundargoc
 
 
 		  VIM REFERENCE MANUAL    by Bram Moolenaar

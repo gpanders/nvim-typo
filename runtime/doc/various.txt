@@ -1,4 +1,4 @@
-*various.txt*   Nvim
+*various.txt*   dundargoc
 
 
 		  VIM REFERENCE MANUAL    by Bram Moolenaar

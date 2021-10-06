@@ -1,4 +1,4 @@
-*options.txt*	Nvim
+*options.txt*	dundargoc
 
 
 		  VIM REFERENCE MANUAL	  by Bram Moolenaar
@@ -707,7 +707,7 @@ A jump table for the options with a short description can be found at |Q_op|.
 	that background type.  The |TUI| or other UI sets this on startup
 	(triggering |OptionSet|) if it can detect the background color.
 
-	This option does NOT change the background color, it tells Nvim what
+	This option does NOT change the background color, it tells dundargoc what
 	the "inherited" (terminal/GUI) background looks like.
 	See |:hi-normal| if you want to set the background color explicitly.
 						*g:colors_name*
@@ -837,7 +837,7 @@ A jump table for the options with a short description can be found at |Q_op|.
 			global
 	List of directories for the backup file, separated with commas.
 	- The backup file will be created in the first directory in the list
-	  where this is possible.  If none of the directories exist Nvim will
+	  where this is possible.  If none of the directories exist dundargoc will
 	  attempt to create the last directory in the list.
 	- Empty means that no backup file will be created ('patchmode' is
 	  impossible!).  Writing may fail because of this.
@@ -2703,14 +2703,14 @@ A jump table for the options with a short description can be found at |Q_op|.
 	When on, the OS function fsync() will be called after saving a file
 	(|:write|, |writefile()|, …), |swap-file| and |shada-file|. This
 	flushes the file to disk, ensuring that it is safely written.
-	Slow on some systems: writing buffers, quitting Nvim, and other
+	Slow on some systems: writing buffers, quitting dundargoc, and other
 	operations may sometimes take a few seconds.
 
 	Files are ALWAYS flushed ('fsync' is ignored) when:
 	- |CursorHold| event is triggered
 	- |:preserve| is called
 	- system signals low battery life
-	- Nvim exits abnormally
+	- dundargoc exits abnormally
 
 	This option cannot be set from a |modeline| or in the |sandbox|, for
 	security reasons.
@@ -3893,7 +3893,7 @@ A jump table for the options with a short description can be found at |Q_op|.
 
 						*'maxcombine'* *'mco'*
 'maxcombine' 'mco'	Removed. |vim-differences|
-	Nvim always displays up to 6 combining characters.  You can still edit
+	dundargoc always displays up to 6 combining characters.  You can still edit
     text with more than 6 combining characters, you just can't see them.
     Use |g8| or |ga|.  See |mbyte-combining|.
 
@@ -4888,7 +4888,7 @@ A jump table for the options with a short description can be found at |Q_op|.
 	   Given by `stdpath("data")/site`.  |$XDG_DATA_HOME|
 	4. nvim/site subdirectories for each directory in $XDG_DATA_DIRS.
 	   This is for plugins which were installed by system administrator,
-	   but are not part of the Nvim distribution. XDG_DATA_DIRS defaults
+	   but are not part of the dundargoc distribution. XDG_DATA_DIRS defaults
 	   to /usr/local/share/:/usr/share/, so system administrators are
 	   expected to install site plugins to /usr/share/nvim/site.
 	5. $VIMRUNTIME, for files distributed with Neovim.
@@ -6469,7 +6469,7 @@ A jump table for the options with a short description can be found at |Q_op|.
 			global
 	This option and 'timeoutlen' determine the behavior when part of a
 	mapped key sequence has been received. For example, if <c-f> is
-	pressed and 'timeout' is set, Nvim will wait 'timeoutlen' milliseconds
+	pressed and 'timeout' is set, dundargoc will wait 'timeoutlen' milliseconds
 	for any key that can follow <c-f> in a mapping.
 
 						*'ttimeout'* *'nottimeout'*
@@ -6479,13 +6479,13 @@ A jump table for the options with a short description can be found at |Q_op|.
 	key code sequence has been received by the |TUI|.
 
 	For example if <Esc> (the \x1b byte) is received and 'ttimeout' is
-	set, Nvim waits 'ttimeoutlen' milliseconds for the terminal to
+	set, dundargoc waits 'ttimeoutlen' milliseconds for the terminal to
 	complete a key code sequence. If no input arrives before the timeout,
 	a single <Esc> is assumed. Many TUI cursor key codes start with <Esc>.
 
 	On very slow systems this may fail, causing cursor keys not to work
 	sometimes.  If you discover this problem you can ":set ttimeoutlen=9999".
-	Nvim will wait for the next character to arrive after an <Esc>.
+	dundargoc will wait for the next character to arrive after an <Esc>.
 
 						*'timeoutlen'* *'tm'*
 'timeoutlen' 'tm'	number	(default 1000)
@@ -6571,7 +6571,7 @@ A jump table for the options with a short description can be found at |Q_op|.
 	file, with path separators replaced with "%".
 	When writing: The first directory that exists is used.  "." always
 	works, no directories after "." will be used for writing.  If none of
-	the directories exist Nvim will attempt to create the last directory in
+	the directories exist dundargoc will attempt to create the last directory in
 	the list.
 	When reading all entries are tried to find an undo file.  The first
 	undo file that exists is used.  When it cannot be read an error is

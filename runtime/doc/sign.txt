@@ -1,4 +1,4 @@
-*sign.txt*      Nvim
+*sign.txt*      dundargoc
 
 
 		  VIM REFERENCE MANUAL    by Gordon Prieur

@@ -1,4 +1,4 @@
-*usr_44.txt*	Nvim
+*usr_44.txt*	dundargoc
 
 		     VIM USER MANUAL - by Bram Moolenaar
 

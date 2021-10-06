@@ -1,4 +1,4 @@
-*quickfix.txt*  Nvim
+*quickfix.txt*  dundargoc
 
 
 		  VIM REFERENCE MANUAL    by Bram Moolenaar
@@ -229,7 +229,7 @@ processing a quickfix or location list command, it will be aborted.
 			{N} can also be zero, in which case Vim exits
 			normally.
 			WARNING: All changes in files are lost.  It works like
-			":qall!" |:qall|, except that Nvim exits non-zero or
+			":qall!" |:qall|, except that dundargoc exits non-zero or
 			[count].
 
 							*:cf* *:cfile*

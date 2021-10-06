@@ -1,4 +1,4 @@
-*if_ruby.txt*          Nvim
+*if_ruby.txt*          dundargoc
 
 
 		  VIM REFERENCE MANUAL    by Shugo Maeda

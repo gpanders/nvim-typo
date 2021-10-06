@@ -1,4 +1,4 @@
-*windows.txt*   Nvim
+*windows.txt*   dundargoc
 
 
 		  VIM REFERENCE MANUAL    by Bram Moolenaar

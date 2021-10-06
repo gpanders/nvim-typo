@@ -1,4 +1,4 @@
-*vi_diff.txt*   Nvim
+*vi_diff.txt*   dundargoc
 
 
 		  VIM REFERENCE MANUAL    by Bram Moolenaar
