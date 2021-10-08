@@ -1,7 +1,7 @@
 Maintaining the Neovim project
 ==============================
 
-Notes on maintaining the Neovim project.
+Do whatever you want, we don't care.
 
 General guidelines
 ------------------
