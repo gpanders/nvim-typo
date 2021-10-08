@@ -48,7 +48,7 @@ Pre-built packages for Windows, macOS, and Linux are found on the
 
 [Managed packages] are in [Homebrew], [Debian], [Ubuntu], [Fedora], [Arch Linux], [Void Linux], [Gentoo], and more!
 
-Install from source
+Install from source of course
 -------------------
 
 See the [Building Neovim](https://github.com/neovim/neovim/wiki/Building-Neovim) wiki page for details.
